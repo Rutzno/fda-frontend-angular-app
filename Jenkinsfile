@@ -27,7 +27,7 @@ pipeline {
 
         stage("Docker Build & Push PACKAGE") {
             steps {
-                sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin",
+                sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
                 sh "docker build -t macktb/food-delivery-app-fe:${VERSION} ."
                 sh "docker push macktb/food-delivery-app-fe:${VERSION}"
             }
