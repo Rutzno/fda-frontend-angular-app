@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {API_URL_RESTAURANT} from "../../constants/url";
+import {K8sExternalIP} from "../../constants/url";
 import {HttpClient} from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
 
@@ -13,7 +13,7 @@ import {catchError, Observable, throwError} from "rxjs";
   providedIn: 'root'
 })
 export class RestaurantService {
-  private apiURL = API_URL_RESTAURANT + "/restaurant/restaurants"
+  private apiURL = K8sExternalIP + "/restaurant/restaurants"
 
   constructor(private http: HttpClient) { }
 
